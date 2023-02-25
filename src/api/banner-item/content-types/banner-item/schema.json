@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banner_items",
+  "info": {
+    "singularName": "banner-item",
+    "pluralName": "banner-items",
+    "displayName": "Banner Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headingOne": {
+      "type": "string",
+      "required": true
+    },
+    "headingTwo": {
+      "type": "string",
+      "required": true
+    },
+    "headingThree": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "home_banners": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::home-banner.home-banner",
+      "mappedBy": "banner_items"
+    }
+  }
+}
